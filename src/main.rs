@@ -1,10 +1,13 @@
-fn practice(nums: Vec<usize>, index: usize) -> usize {
-    return nums.get(index).unwrap_or(&index) * 5;
-}
-
 fn main() {
-    let a = vec![1, 2, 3];
-    let b = vec![1, 2, 3];
-    println!("{}", practice(a, 0));
-    println!("{}", practice(b, 10));
+    let file_name = std::env::args().nth(1).expect("provide the file name");
+
+    let file = std::fs::read_to_string(file_name).expect("please put the file :)");
+
+    file.lines().for_each(|line| {
+        if let Ok(value) = line.parse::<usize>() {
+            println!("{}", value);
+        } else {
+            println!("Line not a number");
+        }
+    });
 }
