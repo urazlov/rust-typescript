@@ -1,19 +1,10 @@
-struct Custom {
-    age: usize,
-    name: String,
-}
-
-enum Item {
-    Number(usize),
-    String(String),
-    MyCustom(Custom),
-}
-
-fn append(items: &mut Vec<Item>) {
-    items.push(Item::String("hello, Fem".to_string()));
+fn practice(nums: Vec<usize>, index: usize) -> usize {
+    return nums.get(index).unwrap_or(&index) * 5;
 }
 
 fn main() {
-    let mut items: Vec<Item> = vec![];
-    append(&mut items);
+    let a = vec![1, 2, 3];
+    let b = vec![1, 2, 3];
+    println!("{}", practice(a, 0));
+    println!("{}", practice(b, 10));
 }

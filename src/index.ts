@@ -1,20 +1,4 @@
-type Custom = {
-  age: number;
-  name: string;
-};
-
-type Item = number | string | Custom;
-
-function append(items: Item[]) {
-  items.push("Hello Fem!");
+function practice(nums: number[], index: number) {
+  if (nums[index]) return nums[index] * 5;
+  return index * 5;
 }
-
-const items: Item[] = [];
-
-append(items);
-
-console.log(items);
-
-const numbers: number[] = [];
-append(numbers);
-console.log(numbers);
